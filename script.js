@@ -14,7 +14,7 @@ const submit = document.querySelector("#add");
     }
     let formData = { productname, category, stockCount, locationCode };
 
-    fetch("https://exambackend-6fzc.onrender.com/api/product", {
+    fetch("https://exambackend-6fzc.onrender.com/api/enrollment", {
       method: "POST",
       body: JSON.stringify(formData),
       headers: {
@@ -35,7 +35,7 @@ window.addEventListener("load", () => {
 function getUsers() {
   let html = "";
   //FETCH API
-  fetch("https://exambackend-6fzc.onrender.com/api/product", { mode: "cors" })
+  fetch("https://exambackend-6fzc.onrender.com/api/enrollment", { mode: "cors" })
     .then((response) => {
       console.log(response);
       return response.json();
@@ -73,4 +73,5 @@ function getUsers() {
       console.log(error);
     });
 }
+
 
