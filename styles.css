@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+    --bg: #050505;
+    --sidebar-bg: #0f0f12;
+    --card-bg: #16161a;
+    --card-border: #26262e;
+    --accent: #00f2fe;
+    --accent-dark: #007a80;
+    --text-main: #ffffff;
+    --text-dim: #94a3b8;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg);
+    color: var(--text-main);
+    margin: 0;
+    overflow: hidden; /* Only sidebars/content should scroll */
+}
+
+#container {
+    display: flex;
+    height: 100vh;
+}
+
+/* --- Left Sidebar --- */
+#sidebar {
+    width: 320px;
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--card-border);
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+h1 span { color: var(--accent); }
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+input {
+    background: #000;
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 12px 16px;
+    color: #fff;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+select {
+    background: #000;
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 12px 16px;
+    color: #fff;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+select :focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.1);
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.1);
+}
+
+button#add {
+    background: var(--accent);
+    color: #000;
+    border: none;
+    padding: 16px;
+    border-radius: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    margin-top: 10px;
+}
+
+button#add:hover {
+    background: #5efbff;
+    transform: translateY(-2px);
+}
+
+/* --- Right Content Area --- */
+#main-content {
+    flex: 1;
+    padding: 50px;
+    overflow-y: auto;
+    background-image: radial-gradient(circle at 50% 50%, #111 0%, #050505 100%);
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.badge {
+    background: rgba(0, 242, 254, 0.1);
+    color: var(--accent);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border: 1px solid var(--accent-dark);
+}
+
+#content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 0;
+}
+
+/* --- Bento Product Cards --- */
+#content li {
+    list-style: none;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 24px;
+    padding: 24px;
+    position: relative;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#content li:hover {
+    border-color: var(--accent);
+    background: #1c1c21;
+    transform: translateY(-5px);
+}
+
+.item-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    border-top: 1px solid var(--card-border);
+    padding-top: 15px;
+}
+
+.stat-val { font-weight: 600; color: #fff; }
+.stat-label { font-size: 0.7rem; color: var(--text-dim); display: block; }
+.supplier-footer {
+    margin-top: 15px;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+}

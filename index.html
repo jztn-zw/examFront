@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examination</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+    <aside id="sidebar">
+        <h1><span>Product Enrollment</span></h1>
+        <div id="form">
+            <div class="input-group">
+                <label for="pname">Product Name</label>
+                <input type="text" id="pname" placeholder="Enter Product Name" required>
+            </div>
+            <div class="input-group">
+                <label for="cat">Category</label>
+                <input type="text" id="cat" placeholder="Enter Category" required>
+            </div>
+            <div class="input-group">
+                <label for="scount">Stock Count</label>
+                <select name="scount" id="scount" required>
+                    <option value="">Select Stock Count</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="lcd">Location Code</label>
+                <input type="text" id="lcd" placeholder="Enter Location Code">
+            </div>
+            <button type="button" id="add">Create Enrollment</button>
+        </div>
+    </aside>
+
+    <main id="main-content">
+        <div class="header-row">
+            <h2>Current Inventory</h2>
+        </div>
+        <ul id="content"></ul>
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
